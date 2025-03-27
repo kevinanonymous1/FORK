@@ -1,0 +1,19 @@
+1)git clone <forked-repository-url>
+2)git clone https://github.com/your-username/DemoFork.git
+3)vim test.txt
+4)git status
+5)git remote -v
+git remote remove origin
+6)git add .
+git commit -m "Modified the file"
+git status
+7)git remote add origin <new-repository-url>
+8)Generate a Personal Access Token (PAT)
+
+Go to GitHub Profile → Settings → Developer Settings → Personal Access Tokens.
+
+Select Tokens (Classic) and generate a token.
+
+Copy the generated token.
+9)git remote set-url origin https://<your-token>@github.com/your-username/DemoFork.git
+10)git push origin main
