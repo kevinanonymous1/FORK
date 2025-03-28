@@ -1,0 +1,100 @@
+Merge Process
+mkdir folder_name (Create a folder)
+
+cd folder_name (Navigate to the folder)
+
+git init (Initialize Git)
+
+git status (Check status)
+
+touch file.txt or vim file.txt (Create a text file)
+
+git status (Check status)
+
+vim file.txt (Edit the file and add content)
+
+git add file.txt (Stage the file)
+
+git status (Check status)
+
+git commit -m "Initial commit" (Commit the file)
+
+git branch hiray (Create a new branch)
+
+git checkout hiray (Switch to the new branch)
+
+git status (Check status)
+
+touch hiray.txt (Create a new text file in the hiray branch)
+
+git status (Check status)
+
+git add hiray.txt (Stage the file)
+
+git commit -m "Added hiray.txt" (Commit the file)
+
+git log (Check commit history)
+
+git checkout master (Switch back to master branch)
+
+touch master2.txt (Create a new file in the master branch)
+
+git add master2.txt (Stage the file)
+
+git commit -m "Added master2.txt" (Commit the file)
+
+git log (Check commit history)
+
+git checkout hiray (Switch to the hiray branch)
+
+git merge master (Merge master branch into hiray)
+
+git log (Check commit history)
+
+---Rebase---
+
+mkdir GitRbase && cd GitRbase (Create and navigate to a folder)
+
+git init (Initialize Git)
+
+git status (Check status)
+
+touch m1.txt (Create a text file in master branch)
+
+git add m1.txt (Stage the file)
+
+git commit -m "Added m1.txt" (Commit the file)
+
+git log (Check commit history)
+
+git branch hiray (Create a new branch)
+
+git checkout hiray (Switch to the new branch)
+
+git log (Check commit history)
+
+touch h1.txt (Create a text file in hiray branch)
+
+git add h1.txt (Stage the file)
+
+git commit -m "Added h1.txt" (Commit the file)
+
+git status (Check status)
+
+git log (Check commit history)
+
+git checkout master (Switch back to master branch)
+
+touch m2.txt (Create a new file in master branch)
+
+git add m2.txt (Stage the file)
+
+git commit -m "Added m2.txt" (Commit the file)
+
+git log (Check commit history)
+
+git checkout hiray (Switch to hiray branch)
+
+git rebase master (Rebase master branch into hiray)
+
+git log (Check commit history)
