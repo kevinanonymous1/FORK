@@ -1,0 +1,25 @@
+git init (Initialize a Git repository)
+
+mkdir folder_name && cd folder_name (Create and navigate to a folder)
+
+touch file1.txt file2.txt file3.txt (Create three text files)
+
+git add . (Stage all files)
+
+git commit -m "Initial commit" (Commit the changes)
+
+git remote add origin <repository_url> (Link the local repository to a remote repository)
+
+git push -u origin main (Push the code to the remote repository)
+
+---PULL---
+
+git pull origin main (Pull the latest changes from the remote repository)
+
+Resolve any conflicts if they arise.
+
+git add . (Stage resolved files)
+
+git commit -m "Resolved merge conflicts" (Commit the changes)
+
+git push origin main (Push the resolved changes back to the remote repository)
