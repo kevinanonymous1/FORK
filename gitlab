@@ -1,0 +1,135 @@
+1) Gitlab CI/CD
+
+- step 1: Create a project make it public 
+- step 2: Create a new file in project -> give name ".gitlab-ci.yml"
+- step 3: Write the below code in it 
+build-steps:
+  stage: build
+  script:
+    - echo "First Step in build..."
+    - echo "Second Step in build..."
+
+testing-job:
+  stage: test
+  script:
+    - echo "First Step in testing..."
+    - echo "Second Step in testing..."
+
+deploy-job:
+  stage: deploy
+  script:
+    - echo "This is deploy step..."
+step 4: Commit the file -> it will automatically show moon symbol while processing and green tick after completing the task
+setp 5: add before script and after script. below is the updated code :
+stages:
+  - build
+  - test
+  - deploy
+
+before_script:
+  - echo "This is before Script"
+
+after_script:
+  - echo "This is After Script"
+
+build-steps:
+  stage: build
+  script:
+    - echo "First Step in build..."
+    - echo "Second Step in build..."
+
+testing-job:
+  stage: test
+  script:
+    - echo "First Step in testing..."
+    - echo "Second Step in testing..."
+
+deploy-job:
+  stage: deploy
+  script:
+    - echo "This is deploy step..."
+
+2) Gitlab and CI running a Bash Script
+
+- step 1: create a file -> give name "try.sh" 
+- step 2: insert the code :
+echo "this is try bash script"
+touch myfile.txt
+echo "sample text added" > myfile.txt
+echo "this is the end of bash Script"
+
+- step 3: create a new file named "yash.gitlab-ci.yml" -> write the below code:
+bash_execution:
+    script:
+        - bash ./try.sh
+
+3) gitlab and CI artifacts and path
+
+code :
+bash_excecution:
+    script:
+        - mkdir folder
+        - cp ./try.sh folder/
+        - cd folder
+        - bash ./try.sh
+        - touch newtext.txt
+
+    artifacts:
+        paths:
+            - "./folder"
+        when: on_success
+        access: all
+        expire_in: 30 days
+
+4) Running pipline manually 
+
+- step 1: on left side panel search for build -> pipelines_schedule -> 
+
+5) GitLab and CI – Create Project to deal with HelloWorld.java 
+
+- step 1: Click on Project -> Create blank Project
+- step 2: Create Java file "HelloWorld.java"
+code:
+class HelloWorld {
+    public static void main(String a[]){
+        System.out.println("hello World");
+    }
+}
+
+- step 3: create config file ".gitlab-ci.yml"
+code:
+stages:
+  - build
+  - test
+
+before_script:
+  - apt-get update && apt-get install -y openjdk-17-jdk  # Install Java
+
+build:
+  stage: build
+  script:
+    - javac HelloWorld.java  # Compile the Java program
+    - ls -l
+  artifacts:
+    paths:
+      - HelloWorld.class  # Save the compiled file for the next job
+  only:
+    - main
+
+test:
+  stage: test
+  when: manual # for manual testing only 
+  script:
+    - ls -l  # Verify if the class file is present
+    - java HelloWorld  # Run the program to check execution
+  only:
+    - main
+
+- step 4: Open git bash in pc and clone this git 
+- step 5: create a java file
+- step 6: git add .
+- step 7: git commit -m "new java file"
+- step 8: git push origin main
+- step 9 : run same config file as above
+
+
