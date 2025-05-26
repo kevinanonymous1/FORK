@@ -1,0 +1,13 @@
+sudo apt install ansible
+
+ansible --version
+
+vi first.yml
+
+- name: first Ansible Demo
+  hosts: localhost
+  tasks:
+      - name: print hello world
+        debug:
+            msg: "hello World"
+
